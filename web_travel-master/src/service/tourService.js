@@ -116,9 +116,11 @@ const updateTour = async (tourId, data) => {
 let filterTourCommon = (searchQuery) => {
   console.log(searchQuery);
   return new Promise((resolve, reject) => {
+    const validColumns = ["name_tour"];
+
     const whereClause = {};
     for (const key in searchQuery) {
-      if (searchQuery.hasOwnProperty(key)) {
+      if (searchQuery.hasOwnProperty(key) && validColumns.includes(key)) {
         whereClause[key] = {
           [Op.like]: `%${searchQuery[key]}%`,
         };
@@ -139,16 +141,23 @@ let filterTourCommon = (searchQuery) => {
 };
 
 let getAllCustomerFeedback = async () => {
-  return new Promise(async (resolve, reject) => {
-    try {
-      let responses = await db.DetailTour.findAll({
-        limit: 20, // Giới hạn số lượng phản hồi trả về
-      });
-      resolve(responses);
-    } catch (e) {
-      reject(e);
-    }
-  });
+  try {
+    let feedbacks = await db.Feedback.findAll({
+      attributes: ["name", "rate", "day", "note"],
+      include: [
+        {
+          model: db.DetailTour,
+          attributes: ["name_tour"], // Đổi tên cột thành tên cột thực tế trong bảng "DetailTours"
+          as: "tour",
+        },
+      ],
+      limit: 20,
+    });
+    return feedbacks;
+  } catch (error) {
+    console.error("Error when fetching customer feedback:", error);
+    throw error;
+  }
 };
 
 module.exports = {

@@ -1,5 +1,6 @@
 const TourDetail = require("../models/detail_tours");
 const tourService = require("../service/tourService");
+const tkTour = require("../service/tkTour");
 const jwt = require("jsonwebtoken");
 const { secretKey } = require("../util/path");
 
@@ -140,6 +141,32 @@ exports.postEditTour = [
   },
 ];
 
+exports.getTest = [
+  checkAdminPermission,
+  async (req, res, next) => {
+    const statistics1 = await tkTour.getTotalTours(); // Gọi hàm từ service để lấy totalTours
+    const statistics2 = await tkTour.getTotalFeedback();
+    const statistics3 = await tkTour.getRateGood();
+    const statistics5 = await tkTour.getTourListWithFeedbackCount();
+    res.render("admin/statistic", {
+      pageTitle: "Statistic",
+      path: "/admin/statistic",
+      statistics1: statistics1, // Truyền totalTours vào view
+      statistics2: statistics2, // Truyền totalTours vào view
+      statistics3: statistics3, // Truyền totalTours vào view
+      statistics5: statistics5,
+      formsCSS: true,
+      productCSS: true,
+      activeAddProduct: true,
+    });
+
+    // } catch (error) {
+    //   // Xử lý lỗi nếu có
+    //   // res.status(500).send('Error fetching total tours111');
+    // }
+  },
+];
+
 exports.getResponse = async (req, res, next) => {
   let listFeedback = await tourService.getAllCustomerFeedback();
   console.log("da vao duoc");
@@ -147,7 +174,7 @@ exports.getResponse = async (req, res, next) => {
   res.render("admin/list-response", {
     pageTitle: "Response Customer",
     path: "/admin/get-response",
-    listFeedback: listFeedback,
+    feedbacks: listFeedback, // Đảm bảo rằng tên biến truyền vào là "feedbacks"
     formsCSS: true,
     productCSS: true,
     activeAddProduct: true,

@@ -18,7 +18,10 @@ router.get("/list-tour", adminController.getAllToursbyAdmin);
 router.delete("/tour/:id", adminController.deleteTour);
 
 router.get("/edit-tour/:id", adminController.getEditTour);
+
 router.post("/edit-tour/:id", adminController.postEditTour);
+
+router.get("/statistic", adminController.getTest);
 
 router.get("/get-response", adminController.getResponse);
 
