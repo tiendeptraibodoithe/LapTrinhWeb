@@ -1,0 +1,186 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/tin-tuc.css" />
+  </head>
+
+  <body>
+    <!--HEADER------------------------------------------------------------------------------- -->
+    <%- include('../includes/navigation.ejs') %>
+      <!--JUMBOTRON - INPUT SEARCH----------------------------------------------------------------- -->
+      <div class="jumbotron text-center">
+        <h2>Du lịch khắp nơi - Khám phá đất nước Việt Nam</h2>
+        <p>Du lịch khắp Việt Nam</p>
+        <form action="/filter-common" method="GET" class="row g-3">
+          <div class="input-group" name="address">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Nhập địa điểm muốn đến..."
+              name = "title"
+            />
+            <div class="input-group-btn btn-filter-common">
+              <button type="submit" class="btn btn-success">Tìm kiếm</button>
+            </div>
+          </div>
+        </form>
+        
+      </div>
+    </header>
+    <!-- Phần nội dung  -->
+    <main class="main-section max-auto">
+      <span class="tieu-de">Các địa điểm nổi bật/ Đà Nẵng</span>
+      <span class="text-1"
+        >Có mấy ai đi du lịch Việt Nam mà có thể bỏ qua Đà Nẵng, và cũng có mấy
+        ai đến Đà Nẵng mà không ghé thăm Hội An? Thị trấn ngay cửa biển này mang
+        nhiều chất thơ hơn bất kỳ nơi nào trên đất Việt, với những dãy nhà 2
+        tầng thấp vàng rực, những giàn hoa giấy nở trước cửa, các con đường lát
+        đá mơ màng và sông Hoài chạy xuyên qua thị trấn. Chỉ cần đặt một tấm vé
+        máy bay đến Đà Nẵng là bạn có thể khám phá thành phố xinh đẹp này. Sau
+        đó, bạn có thể tiếp tục đón xe khách/taxi hoặc thuê xe máy để di chuyển
+        đến Hội An chỉ trong 1 giờ xe chạy.
+      </span>
+      <img src="/image/img1.png" alt="Hội An" class="anh-Da-Nang img-1" />
+      <span class="timg-1 mot-ta"
+        >Hội An yên bình trên từng con phố. @soaipham</span
+      >
+      <img src="/image/img2.png" alt="Hội An" class="anh-Da-Nang img-2" />
+      <span class="timg-2 mo-ta"
+        >Hội An ban đêm ngập trong sắc màu rực rỡ của những chiếc đèn lồng.
+        @lehatruc</span
+      >
+      <span class="text-2"
+        >Hội An vào ban ngày có rất nhiều du khách. Bạn có thể ghé thăm cafe
+        Faifo, lên tầng thượng để check-in với background là toàn cảnh Hội An
+        rực rỡ sau lưng, đến Sunday in Hội An ngắm nội thất xinh xẻo và chụp ảnh
+        “sống ảo" ngay trước cửa quán, về chùa Tam Quan Bà Mụ và checkin trước
+        bức phù điêu to lớn trước cổng,... Vào ban đêm, Hội An lại càng sôi động
+        hơn nữa. Lúc này, ta có thể tham gia trò chơi bài chòi truyền thống bên
+        sông, đi dạo phố đèn lồng, qua chùa Cầu hoặc ngồi thuyền thả hoa
+        đăng,... Tất cả hoạt động này đều rất thú vị đó!
+      </span>
+      <img src="/image/img3.png" alt="Hội An" class="anh-Da-Nang img-3" />
+      <span class="timg-3 mo-ta"
+        >Đạp xe dạo quanh các con phố cổ là điều phải thử khi đến Hội An.
+        @lehatruc</span
+      >
+      <img src="/image/img4.png" alt="Hội An" class="anh-Da-Nang img-4" />
+      <span class="timg-4 mo-ta"
+        >Góc ngắm Hội An “xịn" trên tầng thượng của Faifo Coffee.
+        @chureeporn</span
+      >
+      <span class="text-e">Hãy tới khám phá Đà Nẵng ngay nào!</span>
+    </main>
+    <!--footer---------------------------------------------------------------------------------->
+    <footer>
+      <div class="container-fluid text-white footer">
+        <div class="row">
+          <div class="logo-footer col-lg-2 col-5">
+            <div class="logo">
+              <a href="#"><img src="./image/logo.png" alt="logo" /></a>
+            </div>
+            <p>Du lịch muôn nơi với chúng tôi</p>
+          </div>
+
+          <div class="footer-container_1 col-lg-3 col-7 p-4">
+            <ul class="pl-2 aboutUS text-white">
+              <h5>Điều khoản và chính sách</h5>
+              <li class="aboutUsItem">
+                <a href="#" class="text-decoration-none text-white"
+                  >Chính sách quyền riêng tư</a
+                >
+              </li>
+              <li class="aboutUsItem">
+                <a href="#" class="text-decoration-none text-white"
+                  >Điều khoản và điều kiện</a
+                >
+              </li>
+              <li class="aboutUsItem">
+                <a href="#" class="text-decoration-none text-white"
+                  >Quy chế hoạt động</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-container_2 col-lg-3 col-5 p-4">
+            <ul class="pl-2 aboutUS text-white">
+              <h5>Về chúng tôi</h5>
+              <li class="aboutUsItem">
+                <a href="#" class="text-decoration-none text-white">Liên hệ</a>
+              </li>
+              <li class="aboutUsItem">
+                <a href="#" class="text-decoration-none text-white">Trợ giúp</a>
+              </li>
+              <li class="aboutUsItem">
+                <a href="#" class="text-decoration-none text-white"
+                  >Tuyển dụng</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="container-socials col-lg-3 col-7">
+            <ul>
+              <h5>Liên hệ với chúng tôi</h5>
+              <div class="list-socials">
+                <li>
+                  <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </li>
+              </div>
+            </ul>
+          </div>
+          <div class="divider col-lg-1 col-sm-0"></div>
+        </div>
+        <div class="row">
+          <div class="col-12 information-Company pt-3 text-center">
+            <p>
+              Công ty: ...............Mã số doanh nghiệp: ...............Địa
+              chỉ:........................
+            </p>
+            <div class="Copyright pb-3">
+              <a href="#" class="text-decoration-none text-white"
+                >Copyright 2024.
+              </a>
+              <span>All rights reserved</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="trangchjs.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+          $("#scrollToTopBtn").fadeIn();
+        } else {
+          $("#scrollToTopBtn").fadeOut();
+        }
+      });
+
+      $("#scrollToTopBtn").click(function () {
+        $("html, body").animate(
+          {
+            scrollTop: 0,
+          },
+          400
+        ); // 800 milliseconds để cuộn lên đầu
+        return false;
+      });
+    });
+  </script>
+  <script src="header.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</html>

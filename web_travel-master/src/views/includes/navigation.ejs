@@ -1,0 +1,131 @@
+<header>
+  <!--SLIDER---------------------------------------------------------------------------->
+  <div class="slider">
+    <div class="slider-list_items">
+      <div class="item">
+        <a href="">
+          <img src="./image/hue4.jpg" alt="img" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="">
+          <img src="./image/halong1.jpg" alt="img" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="">
+          <img src="./image/hagiang1.jpg" alt="img" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="buttons" style="display: none">
+    <button id="prev"><</button>
+    <button id="next">></button>
+  </div>
+  <!--NAVBAR HEADER------------------------------------------------------------------------ -->
+  <nav class="navbar navbar-expand-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand"><img src="./image/logo.png" alt="logo" /></a>
+      <div class="bar-content_toggle">
+        <div class="exit"><i class="fa-solid fa-xmark"></i></div>
+        <h3>Danh mục</h3>
+        <ul class="bar-list">
+          <li class="bar-item">
+            <a href="/">
+              <i class="fa-solid fa-house"></i><span>Trang chủ</span></a
+            >
+          </li>
+          <li class="bar-item">
+            <a href="#">
+              <i
+                class="fa-solid fa-book <%= path === '/' ? 'active' : '' %>"
+              ></i
+              ><span>Tin tức du lịch</span></a
+            >
+          </li>
+          <li class="bar-item">
+            <a href="/list-tour"
+              ><i
+                class="fa-solid fa-location-dot <%= path === '/list-tour' ? 'active' : '' %>"
+              ></i
+              ><span>Tour</span></a
+            >
+          </li>
+          <li class="bar-item">
+            <a href="#"
+              ><i class="fa-solid fa-phone"></i><span>Liên hệ</span></a
+            >
+          </li>
+          <li class="bar-item">
+            <a href="#">
+              <i class="fa-solid fa-user"></i><span>Tài khoản</span></a
+            >
+          </li>
+          <li class="bar-item">
+            <a href="#">
+              <i class="fa-solid fa-pen-to-square"></i
+              ><span>Điều khoản</span></a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="bar-icon">
+        <button type="button" class="bar-icon_i navbar-toggler">
+          <span class="navbar-toggler-icon"
+            ><i class="fa-solid fa-bars"></i
+          ></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Trang chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tin-tuc">Tin tức du lịch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/list-tour">Tour</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Liên hệ</a>
+          </li>
+          <li class="nav-item hidden-item">
+            <a class="nav-link" href="#">Điều khoản</a>
+          </li>
+          <li class="nav-item hidden-item-language">
+            <a class="nav-link" href="#"
+              >Tiếng Việt<i class="fa-solid fa-caret-down"></i
+            ></a>
+            <div class="language">
+              <ol>
+                <li>
+                  <a href=""><span>Tiếng Việt</span></a>
+                </li>
+                <li>
+                  <a href=""><span>Tiếng Anh</span></a>
+                </li>
+              </ol>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!--USER ACCOUNT--------------------------------------------------------------------- -->
+      <div class="signIn">
+        <div class="name-user">
+          <span>Minh Quân</span>
+          <div class="image-user">
+            <a href="#"
+              ><img
+                src="https://store.bbcosplay.com/news/2023/04/15/hatsune-miku-la-ai-co-ca-si-ao-tai-nhat-ban-co-luong-fan-khung.jpg"
+                alt="img"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

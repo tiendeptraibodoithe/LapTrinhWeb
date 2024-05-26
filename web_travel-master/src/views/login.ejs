@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="back-link">
+        <a href="Chung.html">
+          <img src="image/less-than-symbol.png" width="14px" />Quay lại
+        </a>
+      </div>
+      <form action="/home" class="form-login" method="GET">
+        <h1>Đăng nhập</h1>
+        <p class="Email">
+          Tài khoản đã đăng kí, hãy điền thông tin để đăng nhập:
+        </p>
+        <div class="input-box">
+          <input type="text" placeholder="Email....." name="email" />
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Password......" name="password" />
+        </div>
+        <% if (typeof errorMessage !== 'undefined') { %>
+        <p class="error-message"><%= errorMessage %></p>
+        <% } %>
+        <button type="submit" class="login-btn">Đăng nhập</button>
+        <div class="login-option">
+          <p class="hoac">_______________hoặc_______________</p>
+          <a href="#" class="option">
+            <img class="google-icon" src="image/google-icon.png" />
+            <span>Tiếp tục với Google</span>
+          </a>
+        </div>
+        <div class="login-option">
+          <a href="#" class="option">
+            <img class="fb-icon" src="image/fb.png" />
+            <span>Tiếp tục với Facebook</span>
+          </a>
+        </div>
+        <div class="dieukhoan">
+          Bằng cách nhấn nút tiếp tục bạn đã đồng ý với Điều khoản & điều kiện,
+          và đã đọc Chính sách quyền riêng tư của chúng tôi
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

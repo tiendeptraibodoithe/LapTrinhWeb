@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  font-family: Inter;
+}
+section {
+  display: flex;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  height: 9.6rem;
+  padding: 0 4.8rem;
+  border-bottom: solid #d9d9d9 1px;
+}
+.tieu-de {
+  margin-left: 40px;
+  width: 154px;
+  height: 27px;
+  flex-shrink: 0;
+  color: #000;
+
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #cf711f;
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  color: #fff;
+  background-color: #e67e22;
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #cf711f;
+}
+.main-icon {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  cursor: pointer;
+  left: 50rem;
+  top: 0.8rem;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("/image/img.png");
+  border-radius: 2rem;
+}
+
+.side-bar {
+  border-right: solid 2px #f5f5f5;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  top: 1rem;
+  width: 270px;
+  height: 1080px;
+  z-index: -99;
+}
+.main-side-bar-list {
+  margin-top: 2rem;
+  list-style: none;
+  align-items: center;
+  gap: 3.2rem;
+}
+.main-side-bar-list li {
+  width: 137px;
+  height: 30px;
+  flex-shrink: 0;
+  color: #000;
+  text-align: center;
+  margin: 10px 0;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+body {
+  font-size: 14px;
+}
+.chat {
+  width: 100%;
+  height: 973px;
+  opacity: 1;
+  top: 20px;
+  left: 0px;
+}
+/* form phan nhap */
+.form-control {
+  margin: 5%;
+  font-size: 30px;
+}
+.chat {
+  display: flex;
+  justify-content: center;
+}
+.product-form {
+  width: 500px;
+}
+.form-control input[type="text"] {
+  width: 100%;
+  padding: 10px;
+}
+.form-control input[type="number"] {
+  width: 100%;
+  padding: 10px;
+}
+.btn {
+  position: relative;
+  left: 326px;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn:hover {
+  background-color: #3e8e41;
+}

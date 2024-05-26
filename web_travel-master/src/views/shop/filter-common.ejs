@@ -1,0 +1,289 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/list-tour.css" />
+  </head>
+  <style>
+    .filter-tour {
+      position: absolute !important;
+      bottom: 0 !important;
+    }
+    .container-button {
+      position: relative;
+      padding-left: 20px;
+    }
+    .filter-admin {
+        margin-bottom: 90px; 
+      }
+      .row-filter{
+        width: 90% !important; 
+      }
+  </style>
+  <body>
+    <!--HEADER------------------------------------------------------------------------------- -->
+    <%- include('../includes/navigation.ejs') %>
+      <!--JUMBOTRON - INPUT SEARCH----------------------------------------------------------------- -->
+  <div class="jumbotron text-center">
+    <h2>Du lịch khắp nơi - Khám phá đất nước Việt Nam</h2>
+    <p>Du lịch khắp Việt Nam</p>
+    <form action = "/filter-common" method = "GET">
+      <div class="input-group" name = "address">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nhập địa điểm muốn đến..."
+          name = "title"
+        />
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-success">Tìm kiếm</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</header>
+    <!-- Phần nội dung  -->
+    <h1 class="mx-auto">Tour cần tìm</h1>
+    <section class="main-section max-auto">
+      <div class="container filter-admin">
+        <div class="row row-filter">
+          <form action = "filter-list-tour" method = "GET" class="row g-3 needs-validation" novalidate>
+            <div class="col-md-3">
+              <label for="validationCustom04" class="form-label"
+                >Theo mức giá</label
+              >
+              <select name = "price" class="form-select form-control" id="validationCustom04" required>
+                <option selected disabled value="">Chọn điểm xuất phát</option>
+                <option>Từ 1.000.000 đến 3.000.000</option>
+                <option>Từ 3.000.000 đến 5.000.000</option>
+                <option>Từ 5.000.000 đến 7.000.000</option>
+                <option>Từ 7.000.000 đến 10.000.000</option>
+              </select>
+              <div class="invalid-feedback">Please select a valid state.</div>
+            </div>
+            <div class="col-md-3">
+              <label for="validationCustom04" class="form-label"
+                >Điểm xuất phát</label
+              >
+              <select name = "start-destination" class="form-select form-control" id="validationCustom04" required>
+                <option selected disabled value="">Chọn điểm xuất phát</option>
+                <option>Hà Nội</option>
+                <option>Ninh Bình</option>
+                <option>Hà Giang</option>
+                <option>Quảng Ninh</option>
+              </select>
+              <div class="invalid-feedback">Please select a valid state.</div>
+            </div>
+            <div class="col-md-3">
+              <label for="validationCustom04" class="form-label">Điểm đến</label>
+              <select name = "end-destination" class="form-select" id="validationCustom04" >
+                <option selected disabled value="">Chọn điểm đến</option>
+                <option>Hà Nội</option>
+                <option>Ninh Bình</option>
+                <option>Hà Giang</option>
+                <option>Quảng Ninh</option>
+              </select>
+              <div class="invalid-feedback">Please select a valid state.</div>
+            </div>
+            <div class="col-md-3 container-button">
+              <button class="btn btn-success filter-tour" type="submit">
+                Lọc các tour
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="main-container-grid">
+       
+     
+        <% if (tours.length > 0) { %> <% for (let tour of tours) { %>
+        <div class="grid-1-2">
+          <div class="image-icon-1">
+            <img
+              src="<%= tour.imageUrl %>"
+              alt="Image description"
+              width="238.2px"
+              height="149.2px"
+            />
+          </div>
+          <div class="tour-1-1">
+            <p class="detail-tour"><%= tour.title %></p>
+            <p class="giam-gia-1">5,000,000đ</p>
+            <p class="gia-1">4,000,000đ</p>
+
+            <div class="thoi-gian-tour-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+              >
+                <path
+                  d="M9.00073 1.49998C7.51737 1.49998 6.06733 1.93984 4.83396 2.76396C3.60059 3.58807 2.6393 4.75941 2.07164 6.12985C1.50398 7.5003 1.35546 9.0083 1.64485 10.4632C1.93424 11.918 2.64854 13.2544 3.69743 14.3033C4.74633 15.3522 6.0827 16.0665 7.53756 16.3559C8.99241 16.6453 10.5004 16.4967 11.8709 15.9291C13.2413 15.3614 14.4126 14.4001 15.2368 13.1668C16.0609 11.9334 16.5007 10.4833 16.5007 8.99998C16.5007 8.01506 16.3067 7.03979 15.9298 6.12985C15.5529 5.21991 15.0005 4.39312 14.304 3.69668C13.6076 3.00024 12.7808 2.44779 11.8709 2.07088C10.9609 1.69397 9.98565 1.49998 9.00073 1.49998ZM9.00073 15C7.81405 15 6.65401 14.6481 5.66731 13.9888C4.68062 13.3295 3.91158 12.3924 3.45746 11.2961C3.00333 10.1997 2.88451 8.99332 3.11602 7.82944C3.34754 6.66555 3.91898 5.59645 4.75809 4.75734C5.59721 3.91822 6.66631 3.34678 7.83019 3.11527C8.99408 2.88375 10.2005 3.00257 11.2968 3.4567C12.3932 3.91083 13.3303 4.67986 13.9896 5.66656C14.6488 6.65325 15.0007 7.81329 15.0007 8.99998C15.0007 10.5913 14.3686 12.1174 13.2434 13.2426C12.1182 14.3678 10.592 15 9.00073 15Z"
+                  fill="#231F20"
+                />
+                <path
+                  d="M12.0007 8.25002H9.75073V6.00002C9.75073 5.80111 9.67171 5.61035 9.53106 5.46969C9.39041 5.32904 9.19964 5.25002 9.00073 5.25002C8.80182 5.25002 8.61105 5.32904 8.4704 5.46969C8.32975 5.61035 8.25073 5.80111 8.25073 6.00002V9.00002C8.25073 9.19894 8.32975 9.3897 8.4704 9.53035C8.61105 9.67101 8.80182 9.75002 9.00073 9.75002H12.0007C12.1996 9.75002 12.3904 9.67101 12.5311 9.53035C12.6717 9.3897 12.7507 9.19894 12.7507 9.00002C12.7507 8.80111 12.6717 8.61035 12.5311 8.46969C12.3904 8.32904 12.1996 8.25002 12.0007 8.25002Z"
+                  fill="#231F20"
+                />
+              </svg>
+              <p>2 ngày 1 đêm</p>
+            </div>
+            <div class="thoi-gian-bat-dau-tour">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+              >
+                <path
+                  d="M13.5 3H12.75V2.25C12.75 2.05109 12.671 1.86032 12.5303 1.71967C12.3897 1.57902 12.1989 1.5 12 1.5C11.8011 1.5 11.6103 1.57902 11.4697 1.71967C11.329 1.86032 11.25 2.05109 11.25 2.25V3H6.75V2.25C6.75 2.05109 6.67098 1.86032 6.53033 1.71967C6.38968 1.57902 6.19891 1.5 6 1.5C5.80109 1.5 5.61032 1.57902 5.46967 1.71967C5.32902 1.86032 5.25 2.05109 5.25 2.25V3H4.5C3.90326 3 3.33097 3.23705 2.90901 3.65901C2.48705 4.08097 2.25 4.65326 2.25 5.25V14.25C2.25 14.8467 2.48705 15.419 2.90901 15.841C3.33097 16.2629 3.90326 16.5 4.5 16.5H13.5C14.0967 16.5 14.669 16.2629 15.091 15.841C15.5129 15.419 15.75 14.8467 15.75 14.25V5.25C15.75 4.65326 15.5129 4.08097 15.091 3.65901C14.669 3.23705 14.0967 3 13.5 3ZM4.5 4.5H5.25V5.25C5.25 5.44891 5.32902 5.63968 5.46967 5.78033C5.61032 5.92098 5.80109 6 6 6C6.19891 6 6.38968 5.92098 6.53033 5.78033C6.67098 5.63968 6.75 5.44891 6.75 5.25V4.5H11.25V5.25C11.25 5.44891 11.329 5.63968 11.4697 5.78033C11.6103 5.92098 11.8011 6 12 6C12.1989 6 12.3897 5.92098 12.5303 5.78033C12.671 5.63968 12.75 5.44891 12.75 5.25V4.5H13.5C13.6989 4.5 13.8897 4.57902 14.0303 4.71967C14.171 4.86032 14.25 5.05109 14.25 5.25V8.25H3.75V5.25C3.75 5.05109 3.82902 4.86032 3.96967 4.71967C4.11032 4.57902 4.30109 4.5 4.5 4.5ZM13.5 15H4.5C4.30109 15 4.11032 14.921 3.96967 14.7803C3.82902 14.6397 3.75 14.4489 3.75 14.25V9.75H14.25V14.25C14.25 14.4489 14.171 14.6397 14.0303 14.7803C13.8897 14.921 13.6989 15 13.5 15Z"
+                  fill="#231F20"
+                />
+                <path
+                  d="M6 12.75C6.41421 12.75 6.75 12.4142 6.75 12C6.75 11.5858 6.41421 11.25 6 11.25C5.58579 11.25 5.25 11.5858 5.25 12C5.25 12.4142 5.58579 12.75 6 12.75Z"
+                  fill="#231F20"
+                />
+                <path
+                  d="M12 11.25H9C8.80109 11.25 8.61032 11.329 8.46967 11.4697C8.32902 11.6103 8.25 11.8011 8.25 12C8.25 12.1989 8.32902 12.3897 8.46967 12.5303C8.61032 12.671 8.80109 12.75 9 12.75H12C12.1989 12.75 12.3897 12.671 12.5303 12.5303C12.671 12.3897 12.75 12.1989 12.75 12C12.75 11.8011 12.671 11.6103 12.5303 11.4697C12.3897 11.329 12.1989 11.25 12 11.25Z"
+                  fill="#231F20"
+                />
+              </svg>
+              <p>Thứ 7 hàng tuần</p>
+            </div>
+            <div class="danh-gia">
+              <p>Điểm:9.1/10 (Rất tốt)</p>
+              <p>Lượt khách: 281</p>
+            </div>
+          </div>
+        </div>
+        <% } %> <% } else { %>
+        <h1>No Products Found!</h1>
+        <% } %>
+      </div>
+    </section>
+    <!--footer---------------------------------------------------------------------------------->
+    <div class="container-fluid text-white footer">
+      <div class="row">
+        <div class="logo-footer col-lg-2 col-5">
+          <div class="logo">
+            <a href="#"><img src="./image/logo.png" alt="logo" /></a>
+          </div>
+          <p>Du lịch muôn nơi với chúng tôi</p>
+        </div>
+
+        <div class="footer-container_1 col-lg-3 col-7 p-4">
+          <ul class="pl-2 aboutUS text-white">
+            <h5>Điều khoản và chính sách</h5>
+            <li class="aboutUsItem">
+              <a href="#" class="text-decoration-none text-white"
+                >Chính sách quyền riêng tư</a
+              >
+            </li>
+            <li class="aboutUsItem">
+              <a href="#" class="text-decoration-none text-white"
+                >Điều khoản và điều kiện</a
+              >
+            </li>
+            <li class="aboutUsItem">
+              <a href="#" class="text-decoration-none text-white"
+                >Quy chế hoạt động</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-container_2 col-lg-3 col-5 p-4">
+          <ul class="pl-2 aboutUS text-white">
+            <h5>Về chúng tôi</h5>
+            <li class="aboutUsItem">
+              <a href="#" class="text-decoration-none text-white">Liên hệ</a>
+            </li>
+            <li class="aboutUsItem">
+              <a href="#" class="text-decoration-none text-white">Trợ giúp</a>
+            </li>
+            <li class="aboutUsItem">
+              <a href="#" class="text-decoration-none text-white">Tuyển dụng</a>
+            </li>
+          </ul>
+        </div>
+        <div class="container-socials col-lg-3 col-7">
+          <ul>
+            <h5>Liên hệ với chúng tôi</h5>
+            <div class="list-socials">
+              <li>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              </li>
+            </div>
+          </ul>
+        </div>
+        <div class="divider col-lg-1 col-sm-0"></div>
+      </div>
+      <div class="row">
+        <div class="col-12 information-Company pt-3 text-center">
+          <p>
+            Công ty: ...............Mã số doanh nghiệp: ...............Địa
+            chỉ:........................
+          </p>
+          <div class="Copyright pb-3">
+            <a href="#" class="text-decoration-none text-white"
+              >Copyright 2024.
+            </a>
+            <span>All rights reserved</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="trangchjs.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+          $("#scrollToTopBtn").fadeIn();
+        } else {
+          $("#scrollToTopBtn").fadeOut();
+        }
+      });
+
+      $("#scrollToTopBtn").click(function () {
+        $("html, body").animate(
+          {
+            scrollTop: 0,
+          },
+          400
+        ); // 800 milliseconds để cuộn lên đầu
+        return false;
+      });
+    });
+  </script>
+  <script src="header.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+</html>

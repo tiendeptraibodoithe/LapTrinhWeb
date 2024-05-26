@@ -1,0 +1,504 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/header.css" />
+  </head>
+  <body>
+    <!--HEADER------------------------------------------------------------------------------- -->
+    <%- include('../includes/navigation.ejs') %>
+      <!--JUMBOTRON - INPUT SEARCH----------------------------------------------------------------- -->
+  <div class="jumbotron text-center">
+    <h2>Du lịch khắp nơi - Khám phá đất nước Việt Nam</h2>
+    <p>Du lịch khắp Việt Nam</p>
+    <form action = "/filter-common" method = "GET">
+      <div class="input-group" >
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nhập địa điểm muốn đến..."
+          name = "title"
+        />
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-success">Tìm kiếm</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</header>
+    <!-- Phần nội dung  -->
+    <!-- khung thứ nhất -->
+    <div class="nd">
+      <div class="background">
+        <div class="note">
+          Thung lũng Lũng Cú - Hà Giang <br />
+          Đánh giá: 9/10 <br />
+          <a href="">Xem chi tiết</a>
+        </div>
+        <div class="swiper-container Part_1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide part_1 slide1">
+              <div class="text">HÀ GIANG</div>
+            </div>
+            <div class="swiper-slide part_1 slide2">
+              <div class="text">NINH BÌNH</div>
+            </div>
+            <div class="swiper-slide part_1 slide3">
+              <div class="text">QUẢNG NAM</div>
+            </div>
+            <div class="swiper-slide part_1 slide4">
+              <div class="text">HÀ NỘI</div>
+            </div>
+            <div class="swiper-slide part_1 slide5">
+              <div class="text">ĐÀ NẴNG</div>
+            </div>
+            <div class="swiper-slide part_1 slide6">
+              <div class="text">THÁI BÌNH</div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev Part_1"></div>
+          <div class="swiper-button-next Part_1"></div>
+        </div>
+      </div>
+      <!-- khung thứ 2 -->
+      <div class="khung">
+        <div class="tieude">Các địa điểm nổi bật</div>
+        <div class="swiper-container Part_2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide part_2 slide1">
+              <a class="link" href=""></a>
+            </div>
+            <div class="swiper-slide part_2 slide2">
+              <a class="link" href=""></a>
+            </div>
+            <div class="swiper-slide part_2 slide3">
+              <a class="link" href=""></a>
+            </div>
+            <div class="swiper-slide part_2 slide4">
+              <a class="link" href=""></a>
+            </div>
+            <div class="swiper-slide part_2 slide5">
+              <a class="link" href=""></a>
+            </div>
+            <div class="swiper-slide part_2 slide6">
+              <a class="link" href=""></a>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+      <!-- khung thứ 3 -->
+      <div class="khung">
+        <div class="tieude">Tour 1 ngày được ưa thích</div>
+        <div class="swiper-container Part_3">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide part_3 slide1">
+              <a class="link" href="">
+                <div class="Pic3"></div>
+                <div class="ND">
+                  <div style="font-weight: bold" class="nd1">
+                    Tour câu mực đêm Quy Nhơn - Hành trình trải nghiệm thú vị
+                  </div>
+                  <div class="nd2">Thời gian tour: 1 ngày</div>
+                  <div class="nd3">Thời gian gian đặt: Hằng ngày</div>
+                  <div class="nd4">
+                    <span>Điểm: 9.0/10 (Rất tốt)</span>
+                    <span
+                      style="
+                        font-size: 16px;
+                        font-weight: bold;
+                        margin-left: 30px;
+                      "
+                      >550,000đ /người</span
+                    >
+                    <span>Lượt khách: 146</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide part_3 slide2">
+              <a class="link" href="">
+                <div class="Pic3"></div>
+                <div class="ND">
+                  <div style="font-weight: bold" class="nd1">
+                    Tour câu mực đêm Quy Nhơn - Hành trình trải nghiệm thú vị
+                  </div>
+                  <div class="nd2">Thời gian tour: 1 ngày</div>
+                  <div class="nd3">Thời gian gian đặt: Hằng ngày</div>
+                  <div class="nd4">
+                    <span>Điểm: 9.0/10 (Rất tốt)</span>
+                    <span
+                      style="
+                        font-size: 16px;
+                        font-weight: bold;
+                        margin-left: 30px;
+                      "
+                      >550,000đ /người</span
+                    >
+                    <span>Lượt khách: 146</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide part_3 slide3">
+              <a class="link" href="">
+                <div class="Pic3"></div>
+                <div class="ND">
+                  <div style="font-weight: bold" class="nd1">
+                    Tour câu mực đêm Quy Nhơn - Hành trình trải nghiệm thú vị
+                  </div>
+                  <div class="nd2">Thời gian tour: 1 ngày</div>
+                  <div class="nd3">Thời gian gian đặt: Hằng ngày</div>
+                  <div class="nd4">
+                    <span>Điểm: 9.0/10 (Rất tốt)</span>
+                    <span
+                      style="
+                        font-size: 16px;
+                        font-weight: bold;
+                        margin-left: 30px;
+                      "
+                      >550,000đ /người</span
+                    >
+                    <span>Lượt khách: 146</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide part_3 slide4">
+              <a class="link" href="">
+                <div class="Pic3"></div>
+                <div class="ND">
+                  <div style="font-weight: bold" class="nd1">
+                    Tour câu mực đêm Quy Nhơn - Hành trình trải nghiệm thú vị
+                  </div>
+                  <div class="nd2">Thời gian tour: 1 ngày</div>
+                  <div class="nd3">Thời gian gian đặt: Hằng ngày</div>
+                  <div class="nd4">
+                    <span>Điểm: 9.0/10 (Rất tốt)</span>
+                    <span
+                      style="
+                        font-size: 16px;
+                        font-weight: bold;
+                        margin-left: 30px;
+                      "
+                      >550,000đ /người</span
+                    >
+                    <span>Lượt khách: 146</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide part_3 slide5">
+              <a class="link" href="">
+                <div class="Pic3"></div>
+                <div class="ND">
+                  <div style="font-weight: bold" class="nd1">
+                    Tour câu mực đêm Quy Nhơn - Hành trình trải nghiệm thú vị
+                  </div>
+                  <div class="nd2">Thời gian tour: 1 ngày</div>
+                  <div class="nd3">Thời gian gian đặt: Hằng ngày</div>
+                  <div class="nd4">
+                    <span>Điểm: 9.0/10 (Rất tốt)</span>
+                    <span
+                      style="
+                        font-size: 16px;
+                        font-weight: bold;
+                        margin-left: 30px;
+                      "
+                      >550,000đ /người</span
+                    >
+                    <span>Lượt khách: 146</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide part_3 slide6">
+              <a class="link" href="">
+                <div class="Pic3"></div>
+                <div class="ND">
+                  <div style="font-weight: bold" class="nd1">
+                    Tour câu mực đêm Quy Nhơn - Hành trình trải nghiệm thú vị
+                  </div>
+                  <div class="nd2">Thời gian tour: 1 ngày</div>
+                  <div class="nd3">Thời gian gian đặt: Hằng ngày</div>
+                  <div class="nd4">
+                    <span>Điểm: 9.0/10 (Rất tốt)</span>
+                    <span
+                      style="
+                        font-size: 16px;
+                        font-weight: bold;
+                        margin-left: 30px;
+                      "
+                      >550,000đ /người</span
+                    >
+                    <span>Lượt khách: 146</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+      <!-- khung thứ 4 -->
+      <div class="khung">
+        <div class="tieudemax">
+          <div class="tieude">Các địa điểm nổi bật</div>
+          <div class="tieude">Xem thêm</div>
+        </div>
+        <div class="swiper-container Part_4">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide part_4 slide1">
+              <a class="link" href="">
+                <div class="Pic4"></div>
+                <div class="Nd">
+                  <div style="font-weight: bold" class="nd1">
+                    Combo Happiness Hotel Quy Nhơn 2 ngày 1 đêm
+                  </div>
+                  <div class="nd2">Thời gian tour: 1 ngày</div>
+                  <div class="nd3">Thời gian gian đặt: Hằng ngày</div>
+                  <div class="nd4">
+                    <span
+                      style="
+                        font-size: 14px;
+                        font-weight: bold;
+                        margin-left: 10px;
+                      "
+                      >550,000đ /người</span
+                    >
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide part_4 slide2">
+              <a class="link" href="">
+                <div class="Pic4"></div>
+                <div class="Nd">
+                  <div style="font-weight: bold" class="nd1">
+                    Combo Happiness Hotel Quy Nhơn 2 ngày 1 đêm
+                  </div>
+                  <div class="nd2">Thời gian tour: 1 ngày</div>
+                  <div class="nd3">Thời gian gian đặt: Hằng ngày</div>
+                  <div class="nd4">
+                    <span
+                      style="
+                        font-size: 14px;
+                        font-weight: bold;
+                        margin-left: 10px;
+                      "
+                      >550,000đ /người</span
+                    >
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide part_4 slide3">
+              <a class="link" href="">
+                <div class="Pic4"></div>
+                <div class="Nd">
+                  <div style="font-weight: bold" class="nd1">
+                    Combo Happiness Hotel Quy Nhơn 2 ngày 1 đêm
+                  </div>
+                  <div class="nd2">Thời gian tour: 1 ngày</div>
+                  <div class="nd3">Thời gian gian đặt: Hằng ngày</div>
+                  <div class="nd4">
+                    <span
+                      style="
+                        font-size: 14px;
+                        font-weight: bold;
+                        margin-left: 10px;
+                      "
+                      >550,000đ /người</span
+                    >
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide part_4 slide4">
+              <a class="link" href="">
+                <div class="Pic4"></div>
+                <div class="Nd">
+                  <div style="font-weight: bold" class="nd1">
+                    Combo Happiness Hotel Quy Nhơn 2 ngày 1 đêm
+                  </div>
+                  <div class="nd2">Thời gian tour: 1 ngày</div>
+                  <div class="nd3">Thời gian gian đặt: Hằng ngày</div>
+                  <div class="nd4">
+                    <span
+                      style="
+                        font-size: 14px;
+                        font-weight: bold;
+                        margin-left: 10px;
+                      "
+                      >550,000đ /người</span
+                    >
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide part_4 slide5">
+              <a class="link" href="">
+                <div class="Pic4"></div>
+                <div class="Nd">
+                  <div style="font-weight: bold" class="nd1">
+                    Combo Happiness Hotel Quy Nhơn 2 ngày 1 đêm
+                  </div>
+                  <div class="nd2">Thời gian tour: 1 ngày</div>
+                  <div class="nd3">Thời gian gian đặt: Hằng ngày</div>
+                  <div class="nd4">
+                    <span
+                      style="
+                        font-size: 14px;
+                        font-weight: bold;
+                        margin-left: 10px;
+                      "
+                      >550,000đ /người</span
+                    >
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide part_4 slide6">
+              <a class="link" href="">
+                <div class="Pic4"></div>
+                <div class="Nd">
+                  <div style="font-weight: bold" class="nd1">
+                    Combo Happiness Hotel Quy Nhơn 2 ngày 1 đêm
+                  </div>
+                  <div class="nd2">Thời gian tour: 1 ngày</div>
+                  <div class="nd3">Thời gian gian đặt: Hằng ngày</div>
+                  <div class="nd4">
+                    <span
+                      style="
+                        font-size: 14px;
+                        font-weight: bold;
+                        margin-left: 10px;
+                      "
+                      >550,000đ /người</span
+                    >
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--footer---------------------------------------------------------------------------------->
+    <div class="container-fluid text-white footer">
+      <div class="row">
+        <div class="logo-footer col-lg-2 col-5">
+          <div class="logo">
+            <a href="#"><img src="./image/logo.png" alt="logo" /></a>
+          </div>
+          <p>Du lịch muôn nơi với chúng tôi</p>
+        </div>
+
+        <div class="footer-container_1 col-lg-3 col-7 p-4">
+          <ul class="pl-2 aboutUS text-white">
+            <h5>Điều khoản và chính sách</h5>
+            <li class="aboutUsItem">
+              <a href="#" class="text-decoration-none text-white"
+                >Chính sách quyền riêng tư</a
+              >
+            </li>
+            <li class="aboutUsItem">
+              <a href="#" class="text-decoration-none text-white"
+                >Điều khoản và điều kiện</a
+              >
+            </li>
+            <li class="aboutUsItem">
+              <a href="#" class="text-decoration-none text-white"
+                >Quy chế hoạt động</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-container_2 col-lg-3 col-5 p-4">
+          <ul class="pl-2 aboutUS text-white">
+            <h5>Về chúng tôi</h5>
+            <li class="aboutUsItem">
+              <a href="#" class="text-decoration-none text-white">Liên hệ</a>
+            </li>
+            <li class="aboutUsItem">
+              <a href="#" class="text-decoration-none text-white">Trợ giúp</a>
+            </li>
+            <li class="aboutUsItem">
+              <a href="#" class="text-decoration-none text-white">Tuyển dụng</a>
+            </li>
+          </ul>
+        </div>
+        <div class="container-socials col-lg-3 col-7">
+          <ul>
+            <h5>Liên hệ với chúng tôi</h5>
+            <div class="list-socials">
+              <li>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              </li>
+            </div>
+          </ul>
+        </div>
+        <div class="divider col-lg-1 col-sm-0"></div>
+      </div>
+      <div class="row">
+        <div class="col-12 information-Company pt-3 text-center">
+          <p>
+            Công ty: ...............Mã số doanh nghiệp: ...............Địa
+            chỉ:........................
+          </p>
+          <div class="Copyright pb-3">
+            <a href="#" class="text-decoration-none text-white"
+              >Copyright 2024.
+            </a>
+            <span>All rights reserved</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="trangchjs.js"></script> -->
+    <script>
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 100) {
+            $("#scrollToTopBtn").fadeIn();
+          } else {
+            $("#scrollToTopBtn").fadeOut();
+          }
+        });
+
+        $("#scrollToTopBtn").click(function () {
+          $("html, body").animate(
+            {
+              scrollTop: 0,
+            },
+            400
+          ); // 800 milliseconds để cuộn lên đầu
+          return false;
+        });
+      });
+    </script>
+    <script src="/js/swiper.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
